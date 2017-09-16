@@ -1,11 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  type: 
-  user: one
-  account: one
-
-two:
-  type: 
-  user: two
-  account: two
+admin_role:
+  type: Role::Admin
+  user: admin
