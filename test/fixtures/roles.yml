@@ -3,3 +3,14 @@
 admin_role:
   type: Role::Admin
   user: admin
+
+account_manager_one:
+  type: Role::AccountManager
+  user: account_manager_one
+  account: one
+
+account_manager_two:
+  type: Role::AccountManager
+  user: account_manager_two
+  account: two
+

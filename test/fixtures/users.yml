@@ -9,3 +9,13 @@ admin:
   crypted_password: $2a$10$cq.rmR5cwHiby3cJaFHuX.bnmenbfmcNiVTX2kOCk5sQR9lnZuXNq
   salt: jzRVGREQ_N4Fov2eXPzE
 
+account_manager_one:
+  email: 'am1@example.org'
+  crypted_password: $2a$10$cq.rmR5cwHiby3cJaFHuX.bnmenbfmcNiVTX2kOCk5sQR9lnZuXNq
+  salt: jzRVGREQ_N4Fov2eXPzE
+
+account_manager_two:
+  email: 'am2@example.org'
+  crypted_password: $2a$10$cq.rmR5cwHiby3cJaFHuX.bnmenbfmcNiVTX2kOCk5sQR9lnZuXNq
+  salt: jzRVGREQ_N4Fov2eXPzE
+
