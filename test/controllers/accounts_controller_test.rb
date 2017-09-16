@@ -3,6 +3,7 @@ require 'test_helper'
 class AccountsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @account = accounts(:one)
+    login(:admin)
   end
 
   test "should get index" do
@@ -44,5 +45,16 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to accounts_url
+  end
+
+  test "should upgrade plan" do
+    login_admin
+    account = accounts(:one)
+    plan = plans(:one)
+
+    post upgrade_plan_account_url(account), params: { plan_id: plan.id }
+    assert_redirected_to accounts_path
+
+    assert_equal plan, Account.find(account.id).plan
   end
 end

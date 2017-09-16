@@ -11,12 +11,17 @@
 
   %tbody
     - @accounts.each do |account|
+      - upgrade_actions = Plan.all.map{|p| current_user.upgrade_plan.for_account(account).for_plan(p)}
+
       %tr
         %td= account.name
         %td= account.plan.title
         %td= link_to 'Show', account
         %td= link_to 'Edit', edit_account_path(account)
         %td= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          - upgrade_actions.each do |a|
+            = link_to a.plan.title, upgrade_plan_account_path(account, plan_id: a.plan.id), method: :post
 
 %br
 

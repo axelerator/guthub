@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :roles
-  resources :accounts
+  resources :accounts do
+    member do
+      post :upgrade_plan
+    end
+  end
   resources :plans
   root :to => 'users#index'
   resources :user_sessions

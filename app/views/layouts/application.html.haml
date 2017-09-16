@@ -16,6 +16,8 @@
         |
         \#{link_to "Login", :login}
     %div
+      %p#error= flash[:error]
+      %p#success= flash[:success]
       %p#notice= flash[:notice]
       %p#alert= flash[:alert]
     = yield

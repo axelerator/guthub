@@ -8,3 +8,4 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
 end
+Dir[Rails.root.join('app','models', 'actions', '*.rb')].each {|file| require_dependency file }
