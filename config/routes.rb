@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :plans
   root :to => 'users#index'
   resources :user_sessions
   resources :users
