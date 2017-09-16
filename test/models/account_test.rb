@@ -25,7 +25,7 @@ class AccountTest < ActiveSupport::TestCase
     account = accounts(:one)
     plan = plans(:two)
 
-    user = users(:account_manager_one)
+    user = users(:account_manager_two)
     action = user.upgrade_plan.for_account(account).for_plan(plan)
     refute action.execute!
     assert_not_equal plan, Account.find(account.id).plan
