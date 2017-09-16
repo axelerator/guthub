@@ -1,14 +1,14 @@
 class Role < ApplicationRecord
   belongs_to :user
 
-  class Admin
+  class Admin < Role
   end
 
-  class AccountManager
+  class AccountManager < Role
     belongs_to :account
   end
 
-  class Dev
+  class Dev < Role
     belongs_to :account
   end
 end

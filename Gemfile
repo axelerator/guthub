@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'sorcery'
 
+gem 'serious_business', path: '../serious_business/serious_business'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
