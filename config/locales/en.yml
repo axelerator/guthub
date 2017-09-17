@@ -34,7 +34,7 @@ en:
     description_with_failed_guards: '%{description} not possible because %{reasons}'
     failed_guard_join_with: ' and '
     upgrade_plan:
-      description: Upgrading this account
+      description: Upgrading this account to %{plan.title}
       guards:
         not_manager: you are not a manager for this account 
 

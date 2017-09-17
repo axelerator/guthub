@@ -2,6 +2,7 @@ PATH
   remote: ../serious_business/serious_business
   specs:
     serious_business (0.1.0)
+      i18n-dot_lookup
       rails (~> 5.0)
 
 GEM
@@ -91,6 +92,8 @@ GEM
       nokogiri (>= 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.8.6)
+    i18n-dot_lookup (0.1.0)
+      i18n
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
