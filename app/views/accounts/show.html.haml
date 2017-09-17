@@ -5,8 +5,15 @@
   = @account.name
 %p
   %b Plan:
-  = @account.plan
+  = @account.plan.title
 
 = link_to 'Edit', edit_account_path(@account)
 \|
 = link_to 'Back', accounts_path
+%table
+  - @account.modifiers.order(created_at: :desc).each do |action|
+    %tr
+      %td=time_ago_in_words(action.created_at)
+      %td=action.actor.email
+      %td=action.description
+

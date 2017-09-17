@@ -36,7 +36,7 @@ en:
     global_guards:
       not_manager: you are not a manager for this account 
     upgrade_plan:
-      description: Upgrading this account to %{plan.title}
+      description: Upgrading this account
     update_account:
       description: Updating account data
 
