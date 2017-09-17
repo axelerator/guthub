@@ -21,7 +21,10 @@
         %td= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' }
         %td
           - upgrade_actions.each do |a|
-            = link_to a.plan.title, upgrade_plan_account_path(account, plan_id: a.plan.id), method: :post
+            - if a.can?
+              = link_to a.plan.title, upgrade_plan_account_path(account, plan_id: a.plan.id), method: :post
+            - else
+              %span{title: a.description}= a.plan.title
 
 %br
 
