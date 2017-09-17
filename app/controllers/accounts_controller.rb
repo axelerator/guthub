@@ -65,8 +65,11 @@ class AccountsController < ApplicationController
     account = Account.find(params[:id])
     plan = Plan.find(params[:plan_id])
     action = current_user.upgrade_plan.for_account(account).for_plan(plan)
-    action.execute!
-    flash[:success] = "Upgraded #{account.name} to #{plan.title}"
+    if action.execute!
+      flash[:success] = "Upgraded #{account.name} to #{plan.title}"
+    else
+      flash[:error] = action.description
+    end
     redirect_to action: :index
   end
 

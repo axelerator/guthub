@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  serious_action:
+    description_with_failed_guards: '%{description} not possible because %{reasons}'
+    failed_guard_join_with: ' and '
+    upgrade_plan:
+      description: Upgrading this account
+      guards:
+        not_manager: you are not a manager for this account 
+
+  
