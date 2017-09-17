@@ -17,7 +17,12 @@
         %td= account.name
         %td= account.plan.title
         %td= link_to 'Show', account
-        %td= link_to 'Edit', edit_account_path(account)
+        %td
+          - update_action = current_user.update_account.for_account(account)
+          - if update_action.can?
+            = link_to 'Edit', edit_account_path(account)
+          - else
+            %span{title: update_action.description}= 'Edit'
         %td= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' }
         %td
           - upgrade_actions.each do |a|

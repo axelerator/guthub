@@ -1,6 +1,22 @@
 %h1 Editing account
 
-= render 'form'
+= form_for_action @action, account_path(@account), method: :patch do |f|
+  - if @action.form_model.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@action.form_model.errors.count, "error")} prohibited this account from being saved:"
+      %ul
+        - @action.form_model.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :plan
+    = f.collection_select(:plan_id, Plan.all, :id, :title)
+  .actions
+    = f.submit 'Save'
+
 
 = link_to 'Show', @account
 \|

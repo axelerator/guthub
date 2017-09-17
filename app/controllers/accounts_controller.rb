@@ -19,6 +19,7 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1/edit
   def edit
+    @action = current_user.update_account.for_account(@account)
   end
 
   # POST /accounts
@@ -40,14 +41,11 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1
   # PATCH/PUT /accounts/1.json
   def update
-    respond_to do |format|
-      if @account.update(account_params)
-        format.html { redirect_to @account, notice: 'Account was successfully updated.' }
-        format.json { render :show, status: :ok, location: @account }
-      else
-        format.html { render :edit }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
-      end
+    @action = current_user.update_account.for_account(@account).with_params(params)
+    if @action.execute!
+       redirect_to @account, notice: 'Account was successfully updated.'
+    else
+      render :edit
     end
   end
 
